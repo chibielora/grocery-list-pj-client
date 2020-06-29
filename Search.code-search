@@ -1,0 +1,30 @@
+# Query: #message
+# Flags: RegExp
+
+24 results - 1 file
+
+frontend/assets/scripts/auth/ui.js:
+   7:   $('#system-message').text('Signed up successfully')
+   8:   $('#system-message').removeClass()
+   9:   $('#system-message').addClass('success')
+  13:   $('#system-message').text('Error on sign up')
+  14:   $('#system-message').removeClass()
+  15:   $('#system-message').addClass('failure')
+  20:   $('#system-message').text('Signed in successfully')
+  21:   $('#system-message').removeClass()
+  22:   $('#system-message').addClass('success')
+  29:   $('#system-message').text('Error on sign in')
+  30:   $('#system-message').removeClass()
+  31:   $('#system-message').addClass('failure')
+  35:   $('#system-message').text('Signed out successfully')
+  36:   $('#system-message').removeClass()
+  37:   $('#system-message').addClass('success')
+  45:   $('#system-message').text('Error on sign out')
+  46:   $('#system-message').removeClass()
+  47:   $('#system-message').addClass('failure')
+  52:   $('#system-message').text('Changed password successfully')
+  53:   $('#system-message').removeClass()
+  54:   $('#system-message').addClass('success')
+  58:   $('#system-message').text('Error on change password')
+  59:   $('#system-message').removeClass()
+  60:   $('#system-message').addClass('failure')
