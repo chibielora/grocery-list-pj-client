@@ -1,6 +1,12 @@
 'use strict'
 
 const store = require('../.././store')
+const showFrontPage = require('../templates/front-page.handlebars')
+
+const showHeader = function (signedIn) {
+  const frontPage = showFrontPage({signedIn: true})
+  $('#front-page').html(frontPage)
+}
 
 const signUpSuccess = function () {
   $('form').trigger('reset')
@@ -20,8 +26,7 @@ const signInSuccess = function (data) {
   $('#system-message').text('Signed in successfully')
   $('#system-message').removeClass()
   $('#system-message').addClass('success')
-  $('#logged-out-screen').hide()
-  $('#logged-in-screen').show()
+  showHeader(true)
   store.user = data.user
 }
 
@@ -36,8 +41,7 @@ const signOutSuccess = function () {
   $('#system-message').removeClass()
   $('#system-message').addClass('success')
   $('form').trigger('reset')
-  $('#logged-in-screen').hide()
-  $('#logged-out-screen').show()
+  showHeader(false)
   store.user = null
 }
 

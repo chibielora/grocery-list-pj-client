@@ -1,0 +1,44 @@
+{{#if signedIn}}
+  <form id="change-password" class="border p-2">
+    <fieldset>
+      <legend class="small-screen">Change Password!</legend>
+      <input id="old-password" class="small-screen" type="password" name="passwords[old]" placeholder="Old Password">
+      <input id="new-password" class="small-screen" type="password" name="passwords[new]" placeholder="New Password">
+      <input class="small-screen" type="submit" value=" Change Password! ">
+    </fieldset>
+  </form>
+  <form id="sign-out" class="border">
+    <fieldset>
+      <legend class="small-screen">Sign Out!</legend>
+      <input class="small-screen" type="submit" value=" Sign out! ">
+    </fieldset>
+  </form>
+{{else}}
+  <form id="sign-in" class="border m-4 p-2">
+  <fieldset>
+    <legend>Sign in!</legend>
+    <div class="form-group">
+      <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Sign in!">
+  </fieldset>
+  </form>
+  <form id="sign-up" class="border m-4 p-2">
+    <fieldset>
+     <legend>Sign up!</legend>
+    <div class="form-group">
+      <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm Password">
+    </div>
+    <input type="submit" class="btn btn-primary" value=" Sign up! ">
+  </fieldset>
+</form>
+{{/if}}

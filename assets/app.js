@@ -8,9 +8,14 @@ import $ from 'jquery'
 // require('./example')
 const authEvents = require('./scripts/auth/events')
 const groceryListEvents = require('./scripts/grocery-list/list-events')
+const showFrontPage = require('./scripts/templates/front-page.handlebars')
 $(() => {
   // your JS code goes here
-  authEvents.addHandlers()
-  groceryListEvents.addHandlers()
+  // groceryListEvents.addHandlers()
   $('#logged-in-screen').hide()
+  const frontPage = showFrontPage({
+    signedIn: false
+  })
+  $('#front-page').html(frontPage)
+  authEvents.addHandlers()
 })

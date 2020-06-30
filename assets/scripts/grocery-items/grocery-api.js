@@ -3,9 +3,9 @@
 const config = require('../../config')
 const store = require('../../store')
 
-const createGroceryItem = function (id) {
+const createGroceryItem = function (listId) {
   return $.ajax({
-    url: config.apiUrl + `/list/${id}/grocery`,
+    url: config.apiUrl + `/list/${listId}/grocery`,
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -14,29 +14,9 @@ const createGroceryItem = function (id) {
   })
 }
 
-const indexGroceryItem = function () {
-  return $.ajax({
-    url: config.apiUrl + '/grocery',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
-const showGroceryItem = function (id) {
-  return $.ajax({
-    url: config.apiUrl + `/grocery/${id}`,
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
 const updateGroceryItem = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/item/' + store.item._id,
+    url: config.apiUrl + `/grocery/` + store.item._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -46,7 +26,7 @@ const updateGroceryItem = function (data) {
 }
 const deleteGroceryItem = function (id) {
   return $.ajax({
-    url: config.apiUrl + `/item/${id}`,
+    url: config.apiUrl + `/grocery/${id}`,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -56,8 +36,6 @@ const deleteGroceryItem = function (id) {
 
 module.exports = {
   createGroceryItem,
-  indexGroceryItem,
-  showGroceryItem,
   updateGroceryItem,
   deleteGroceryItem
 }
