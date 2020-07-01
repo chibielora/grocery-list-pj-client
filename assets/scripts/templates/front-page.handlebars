@@ -1,4 +1,55 @@
 {{#if signedIn}}
+
+<div class="jumbotron" style="margin-bottom: 0px;">
+  {{!-- <h1>Elisted</h1> --}}
+  <img src="https://i.imgur.com/EW4RbiP.png" style="">
+  {{!-- <p>Your favorite grocery list</p> --}}
+</div>
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapse_target">
+    {{!-- <a class="navbar-brand"><img src="myimage.png"></a>
+  <span class="navbar-text">Title menu bar</span> --}}
+    <ul class="navbar-nav">
+{{!-- Dropdown #1 --}}
+      <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown"
+          data-target="dropdown_target" href="#">
+          My Lists<span class="caret"></span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdown_target">
+          <ul class="navbar-nav">
+            <a class="dropdown-item">Create a List</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">See Lists</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">Delete a List</a>
+          </ul>
+        </div>
+      </li>
+{{!-- Dropdown #2 --}}
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"
+        href="#">
+        Change Password<span class="caret"></span>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdown_target">
+        <ul class="navbar-nav">
+          <a class="dropdown-item">Old Password</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item">New Password</a>
+            <div class="dropdown-divider"></div>
+          <a class="dropdown-item">Submit</a>
+        </ul>
+      </div>
+    </li>
+{{!-- Others --}}
+      <li class="nav-item"><a class="nav-link" href="#">Sign Out</a></li>
+    </ul>
+  </div>
+</nav>
+
+
   <form id="change-password" class="border p-2">
     <fieldset>
       <legend class="small-screen">Change Password!</legend>
