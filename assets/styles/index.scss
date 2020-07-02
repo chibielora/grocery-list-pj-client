@@ -1,5 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
 
+html,
+body {
+  font-family: arial, sans-serif
+}
+
 img {
   width: 30%;
   height: auto;
@@ -20,4 +25,16 @@ img {
   width: 18rem;
   min-width: 18rem;
   margin: 1em;
+}
+
+#shoping-list {
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-gap: 10px;
+}
+
+#list-add div {
+  background: #f2f2f2;
+  padding: 10px;
 }

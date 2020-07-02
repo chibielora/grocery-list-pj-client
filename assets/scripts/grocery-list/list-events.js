@@ -3,6 +3,13 @@
 const api = require('./list-api.js')
 const ui = require('./list-ui.js')
 
+const onCreateList = function (event) {
+  event.preventDefault()
+  api.createList()
+    .then(ui.onCreateListSuccess)
+    .catch(ui.onCreateListFailure)
+}
+
 const onGetList = (event) => {
   event.preventDefault()
   api.getList()
@@ -32,7 +39,7 @@ const onClearList = (event) => {
 const onDeleteList = (event) => {
   event.preventDefault()
   const id = $(event.target).data('id')
-  api.deleteBook(id)
+  api.deleteList(id)
     .then(() => ui.deleteListSuccess(id))
     .catch(ui.failure)
 }
@@ -41,6 +48,7 @@ const onDeleteList = (event) => {
 
 const addHandlers = () => {
   const listHandlers = $('#show-list')
+  listHandlers.on('click', '#createListButton', onCreateList)
   listHandlers.on('click', '#getListButton', onGetList)
   listHandlers.on('click', '#indexListButton', onIndexList)
   listHandlers.on('click', '#updateListButton', onUpdateList)
