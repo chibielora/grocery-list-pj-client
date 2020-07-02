@@ -3,6 +3,16 @@
 const config = require('../../config')
 const store = require('../../store')
 
+const getGroceryItem = function () {
+  return $.ajax({
+    url: config.apiUrl + `/list/grocery`,
+    method: 'GET',
+    success: function (data) {
+      console.log('success', data)
+    }
+  })
+}
+
 const createGroceryItem = function (listId) {
   return $.ajax({
     url: config.apiUrl + `/list/${listId}/grocery`,

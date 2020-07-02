@@ -1,10 +1,12 @@
 'use strict'
 
 const store = require('../.././store')
+const listApi = require('../grocery-list/list-api')
+const listUi = require('../grocery-list/list-ui')
 const showFrontPage = require('../templates/front-page.handlebars')
 
 const showHeader = function (signedIn) {
-  const frontPage = showFrontPage({signedIn: true})
+  const frontPage = showFrontPage({signedIn: signedIn})
   $('#front-page').html(frontPage)
 }
 
@@ -28,6 +30,9 @@ const signInSuccess = function (data) {
   $('#system-message').addClass('success')
   showHeader(true)
   store.user = data.user
+  listApi.indexList()
+    .then(listUi.onIndexListSuccess)
+    .catch(listUi.onIndexListFailure)
 }
 
 const signInFailure = function () {

@@ -19,13 +19,14 @@
           My Lists<span class="caret"></span>
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdown_target">
-          <ul class="navbar-nav">
-            <a class="dropdown-item">Create a List</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item">See Lists</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item">Delete a List</a>
-          </ul>
+          <a class="dropdown-item">Create New List</a>
+          {{!-- <div class="dropdown-divider"></div> --}}
+          {{!-- <a class="dropdown-item">See Lists</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item">Delete a List</a> --}}
+          {{!-- <a href="#" class="dropdown-item">Edit a List</a>
+          <a href="#" class="dropdown-item">List 2</a>
+          <a href="#" class="dropdown-item">List 3</a> --}}
         </div>
       </li>
 {{!-- Dropdown #2 --}}
@@ -34,23 +35,30 @@
         Change Password<span class="caret"></span>
       </a>
       <div class="dropdown-menu" aria-labelledby="dropdown_target">
-        <ul class="navbar-nav">
-          <a class="dropdown-item">Old Password</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item">New Password</a>
+        <form id="change-password">
+          <fieldset>
+          <div class="dropdown-item">
+            <input id="old-password" type="password" name="passwords[old]" placeholder="Old Password">
             <div class="dropdown-divider"></div>
-          <a class="dropdown-item">Submit</a>
-        </ul>
+            <input id="new-password" type="password" name="passwords[new]" placeholder="New Password">
+            <div class="dropdown-divider"></div>
+            <input type="submit" value="Change Password" class="btn btn-light" />
+          </div>
+          </fieldset>
+        </form>
+
       </div>
     </li>
-{{!-- Others --}}
-      <li class="nav-item"><a class="nav-link" href="#">Sign Out</a></li>
+{{!-- Sign Out --}}
+
+      <li class="nav-item"><a id="sign-out" class="nav-link" href="#" type="submit" value="sign-out">Sign Out</a></li>
+
     </ul>
   </div>
 </nav>
 
-
-  <form id="change-password" class="border p-2">
+{{!-- Non dropdown --}}
+  {{!-- <form id="change-password" class="border p-2">
     <fieldset>
       <legend class="small-screen">Change Password!</legend>
       <input id="old-password" class="small-screen" type="password" name="passwords[old]" placeholder="Old Password">
@@ -63,8 +71,10 @@
       <legend class="small-screen">Sign Out!</legend>
       <input class="small-screen" type="submit" value=" Sign out! ">
     </fieldset>
-  </form>
+  </form>  --}}
+<div id="lists-container" class="lists-container"></div>
 {{else}}
+
   <form id="sign-in" class="border m-4 p-2">
   <fieldset>
     <legend>Sign in!</legend>
@@ -92,4 +102,5 @@
     <input type="submit" class="btn btn-primary" value=" Sign up! ">
   </fieldset>
 </form>
+
 {{/if}}

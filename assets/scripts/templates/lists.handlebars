@@ -1,0 +1,13 @@
+{{#each lists as |list|}}
+{{log list}}
+<section class="list-card" data-id="{{list._id}}">
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">{{list.title}}</h5>
+      <p class="card-text">{{list.groceries.length}} items in this list</p>
+      <a href="#" class="btn btn-primary">Edit</a>
+    </div>
+  </div>
+</section>
+
+{{/each}} 
