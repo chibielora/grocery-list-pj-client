@@ -54,7 +54,7 @@ const addHandlers = () => {
   frontPage.on('submit', '#list-create-form', onCreateList)
   frontPage.on('click', '#getListButton', onGetList)
   frontPage.on('click', '#indexListButton', onIndexList)
-  // frontPage.on('click', '#updateListButton', onUpdateList)
+  frontPage.on('click', '#updateListButton', onUpdateList)
   frontPage.on('click', '#clearListButton', onClearList)
   frontPage.on('click', '.list-delete-button', onDeleteList)
 }
