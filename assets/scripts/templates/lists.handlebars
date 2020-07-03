@@ -1,25 +1,4 @@
-<link rel="stylesheet" href="/assets/styles/index.scss">
-
 {{#each lists as |list|}}
 {{log list}}
-<section class="list-card" data-id="{{list._id}}">
-  <div class="card text-center">
-    <div class="card-body">
-      <h5 class="card-title">{{list.title}}</h5>
-      <p class="card-text">{{list.groceries.length}} groceries in this list</p>
-      <a href="#" class="btn btn-primary">Edit</a>
-    </div>
-  </div>
-</section>
+{{> list-partial list}}
 {{/each}} 
-
-  <!-- Shopping list -->
-  <h1>Shopping list</h1>
-  <div id="shopping-list"></div>
-  
-  <!-- Add grocery -->
-  <h1>Add grocery</h1>
-  <form id="list-add">
-    <input type="text" id="add-grocery" placeholder="New grocery" required value="Add your items here" />
-    <input type="submit" value="Add grocery" />
-  </form>

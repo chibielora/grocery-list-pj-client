@@ -1,10 +1,14 @@
 const store = require('../.././store')
 const listOfCards = require('../templates/lists.handlebars')
+const showListPartial = require('../templates/list-partial.handlebars')
 
 const onCreateListSuccess = function (data) {
   $('#list-message').text("Here's your list!")
   $('#list-message').removeClass()
   $('#list-message').addClass('success')
+  const listPartialHtml = showListPartial(data.list)
+  $('#create-list-modal').modal('hide')
+  $('#lists-container').append(listPartialHtml)
   console.log('onCreateListSuccess ran. Data is :', data)
 }
 
@@ -45,10 +49,11 @@ const onShowListFailure = function (error) {
   console.error('onShowListFailure ran. Error is :', error)
 }
 
-const onDeleteListSuccess = function () {
+const onDeleteListSuccess = function (id) {
   $('#list-message').text('List successfully deleted')
   $('#list-message').removeClass()
   $('#list-message').addClass('success')
+  $(`.list-card[data-id="${id}"]`).remove()
   console.log('List successfully deleted')
 }
 

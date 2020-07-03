@@ -1,0 +1,36 @@
+<section class="list-card" data-id="{{_id}}">
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <form class="grocery-create-form" data-id="{{_id}}">
+        <input type="hidden" name="listId" value="{{_id}}" />
+        <input type="text" name="grocery[name]" placeholder="Add item" />
+        <button type="submit" class="btn btn-success btn-sm">+</button>
+      </form>
+      <p class="card-text mt-2">{{groceries.length}} items</p>
+      <ul class="list-group">
+        {{#each groceries as |grocery|}}
+          <li class="list-group-item d-flex w-100">
+            {{#if grocery.marked}}
+              <button class="grocery-unmark-button btn btn-sm btn-success" data-id={{grocery._id}}>&checkmark;</button>
+              <div class="flex-grow-1">
+                <del>{{grocery.name}}</del>
+              </div>
+            {{else}}
+              <button class="grocery-mark-button btn btn-sm btn-light" data-id={{grocery._id}}>&checkmark;</button>
+              <div class="flex-grow-1">
+                {{grocery.name}}
+              </div>
+            {{/if}}
+            <button class="grocery-delete-button btn btn-sm btn-danger" data-id={{grocery._id}}>&times;</button>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="card-link btn btn-warning shadow-sm" data-toggle="modal"
+        data-target="#edit-list-{{_id}}">Edit</a>
+      <a href="#" data-id="{{_id}}" class="list-delete-button card-link btn btn-warning shadow-sm">Delete</a>
+    </div>
+  </div>
+</section>

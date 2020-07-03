@@ -9,7 +9,7 @@ const $ = require('jquery')
 
 const authEvents = require('./scripts/auth/events')
 const groceryListEvents = require('./scripts/grocery-list/list-events')
-// const groceryItemEvents = require('./scripts/grocery-items/grocery-events')
+const groceryItemEvents = require('./scripts/grocery-items/grocery-events')
 const showFrontPage = require('./scripts/templates/front-page.handlebars')
 
 $(() => {
@@ -22,7 +22,7 @@ $(() => {
   $('#front-page').html(frontPage)
   authEvents.addHandlers()
   groceryListEvents.addHandlers()
-  // groceryItemEvents.addHandlers()
+  groceryItemEvents.addHandlers()
 })
 
 // USER newdb PW 12

@@ -1,9 +1,11 @@
-const store = require('../.././store')
+const showListPartial = require('../templates/list-partial.handlebars')
 
 const onCreateGrocerySuccess = function (data) {
   $('#list-message').text("Here's your item!")
   $('#list-message').removeClass()
   $('#list-message').addClass('success')
+  const listPartialHtml = showListPartial(data.list)
+  $(`.list-card[data-id="${data.list._id}"]`).replaceWith(listPartialHtml)
   console.log('onCreateGrocerySuccess ran. Data is :', data)
 }
 
@@ -14,10 +16,12 @@ const onCreateGroceryFailure = function (error) {
   console.error('onCreateGroceryFailure ran. Error is :', error)
 }
 
-const onUpdateGrocerySuccess = function () {
+const onUpdateGrocerySuccess = function (data) {
   $('#list-message').text('item successfully updated')
   $('#list-message').removeClass()
   $('#list-message').addClass('success')
+  const listPartialHtml = showListPartial(data.list)
+  $(`.list-card[data-id="${data.list._id}"]`).replaceWith(listPartialHtml)
   console.log('item successfully updated')
 }
 

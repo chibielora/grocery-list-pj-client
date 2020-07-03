@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/assets/styles/index.scss">
+
 {{#if signedIn}}
 
 <div class="jumbotron" style="margin-bottom: 0px;">
@@ -19,14 +21,12 @@
           My Lists<span class="caret"></span>
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdown_target">
-          <a class="dropdown-item">Create New List</a>
+          <a class="dropdown-item" data-toggle="modal" data-target="#list-create-modal">Create New List</a>
           {{!-- <div class="dropdown-divider"></div> --}}
           {{!-- <a class="dropdown-item">See Lists</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item">Delete a List</a> --}}
-          {{!-- <a href="#" class="dropdown-item">Edit a List</a>
-          <a href="#" class="dropdown-item">List 2</a>
-          <a href="#" class="dropdown-item">List 3</a> --}}
+          {{!-- <a href="#" class="dropdown-item">Edit a List</a> --}}
         </div>
       </li>
 {{!-- Dropdown #2 --}}
@@ -56,22 +56,6 @@
     </ul>
   </div>
 </nav>
-
-{{!-- Non dropdown --}}
-  {{!-- <form id="change-password" class="border p-2">
-    <fieldset>
-      <legend class="small-screen">Change Password!</legend>
-      <input id="old-password" class="small-screen" type="password" name="passwords[old]" placeholder="Old Password">
-      <input id="new-password" class="small-screen" type="password" name="passwords[new]" placeholder="New Password">
-      <input class="small-screen" type="submit" value=" Change Password! ">
-    </fieldset>
-  </form>
-  <form id="sign-out" class="border">
-    <fieldset>
-      <legend class="small-screen">Sign Out!</legend>
-      <input class="small-screen" type="submit" value=" Sign out! ">
-    </fieldset>
-  </form>  --}}
 <div id="lists-container" class="lists-container"></div>
 {{else}}
 
@@ -104,3 +88,26 @@
 </form>
 
 {{/if}}
+
+{{!-- Modal to create new Lists --}}
+<div class="modal fade" id="list-create-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form id="list-create-form">
+        <div class="modal-body">
+          <input class="form-control" type="text" id="add-title" name="list[title]" placeholder="Add your title here" required />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-warning" id="create-list-button">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

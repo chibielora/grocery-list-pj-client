@@ -3,40 +3,30 @@
 const config = require('../../config')
 const store = require('../../store')
 
-const getGroceryItem = function () {
+const createGroceryItem = function (data) {
   return $.ajax({
-    url: config.apiUrl + `/list/grocery`,
-    method: 'GET',
-    success: function (data) {
-      console.log('success', data)
-    }
-  })
-}
-
-const createGroceryItem = function (listId) {
-  return $.ajax({
-    url: config.apiUrl + `/list/${listId}/grocery`,
+    url: config.apiUrl + `/list/${data.listId}/grocery`,
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: ''
+    data: data
   })
 }
 
-const updateGroceryItem = function (data) {
+const updateGroceryItem = function (listId, id, data) {
   return $.ajax({
-    url: config.apiUrl + `/grocery/` + store.item._id,
+    url: config.apiUrl + `/list/${listId}/grocery/${id}`,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: data
   })
 }
-const deleteGroceryItem = function (id) {
+const deleteGroceryItem = function (listId, id) {
   return $.ajax({
-    url: config.apiUrl + `/grocery/${id}`,
+    url: config.apiUrl + `/list/${listId}/grocery/${id}`,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

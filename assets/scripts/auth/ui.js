@@ -3,10 +3,10 @@
 const store = require('../.././store')
 const listApi = require('../grocery-list/list-api')
 const listUi = require('../grocery-list/list-ui')
-const showFrontPage = require('../templates/front-page.handlebars')
+const showFrontPageTemplate = require('../templates/front-page.handlebars')
 
-const showHeader = function (signedIn) {
-  const frontPage = showFrontPage({signedIn: signedIn})
+const showFrontPage = function (signedIn) {
+  const frontPage = showFrontPageTemplate({signedIn: signedIn})
   $('#front-page').html(frontPage)
 }
 
@@ -28,7 +28,7 @@ const signInSuccess = function (data) {
   $('#system-message').text('Signed in successfully')
   $('#system-message').removeClass()
   $('#system-message').addClass('success')
-  showHeader(true)
+  showFrontPage(true)
   store.user = data.user
   listApi.indexList()
     .then(listUi.onIndexListSuccess)
@@ -46,7 +46,7 @@ const signOutSuccess = function () {
   $('#system-message').removeClass()
   $('#system-message').addClass('success')
   $('form').trigger('reset')
-  showHeader(false)
+  showFrontPage(false)
   store.user = null
 }
 

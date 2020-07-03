@@ -3,49 +3,25 @@
 const config = require('../../../assets/config')
 const store = require('../../../assets/store')
 
-const createList = function () {
+const createList = function (data) {
   return $.ajax({
     url: config.apiUrl + '/list',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: ''
+    data: data
   })
 }
 
 const indexList = function () {
-  return Promise.resolve({
-    lists: [
-      {
-        _id: 1,
-        title: 'List #1',
-        groceries: []
-      },
-      {
-        _id: 2,
-        title: 'List #2',
-        groceries: ['Gorps']
-      },
-      {
-        _id: 3,
-        title: 'List #3',
-        groceries: ['Cat food', 'Pizza crust', 'Tokilene', 'Gata safada']
-      },
-      {
-        _id: 2,
-        title: 'List #4',
-        groceries: ['Ooples', 'Banoonoos']
-      }
-    ]
+  return $.ajax({
+    url: config.apiUrl + '/list',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
-  // return $.ajax({
-  //   url: config.apiUrl + '/list',
-  //   method: 'GET',
-  //   headers: {
-  //     Authorization: 'Token token=' + store.user.token
-  //   }
-  // })
 }
 
 const showList = function (id) {
