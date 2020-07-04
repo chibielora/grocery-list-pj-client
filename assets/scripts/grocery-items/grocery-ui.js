@@ -32,10 +32,11 @@ const onUpdateGroceryFailure = function (error) {
   console.error('onUpdateGroceryFailure ran. Error is :', error)
 }
 
-const onDeleteGrocerySuccess = function () {
+const onDeleteGrocerySuccess = function (id) {
   $('#list-message').text('item successfully deleted')
   $('#list-message').removeClass()
   $('#list-message').addClass('success')
+  $(`.grocery-item[data-id="${id}"]`).remove()
   console.log('item successfully deleted')
 }
 

@@ -1,19 +1,11 @@
-<link rel="stylesheet" href="/assets/styles/index.scss">
-
 {{#if signedIn}}
 
-<div class="jumbotron" style="margin-bottom: 0px;">
-  {{!-- <h1>Elisted</h1> --}}
-  <img src="https://i.imgur.com/EW4RbiP.png" style="">
-  {{!-- <p>Your favorite grocery list</p> --}}
-</div>
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
   <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="collapse_target">
-    {{!-- <a class="navbar-brand"><img src="myimage.png"></a>
-  <span class="navbar-text">Title menu bar</span> --}}
+
     <ul class="navbar-nav">
 {{!-- Dropdown #1 --}}
       <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown"
@@ -22,11 +14,6 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdown_target">
           <a class="dropdown-item" data-toggle="modal" data-target="#list-create-modal">Create New List</a>
-          {{!-- <div class="dropdown-divider"></div> --}}
-          {{!-- <a class="dropdown-item">See Lists</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item">Delete a List</a> --}}
-          {{!-- <a href="#" class="dropdown-item">Edit a List</a> --}}
         </div>
       </li>
 {{!-- Dropdown #2 --}}
@@ -56,10 +43,13 @@
     </ul>
   </div>
 </nav>
-<div id="lists-container" class="lists-container"></div>
+<div id="lists-container" class="lists-container">
+  {{!-- Bg Image --}}
+<div class="bg"></div>
+{{!-- BG Image --}}</div>
 {{else}}
 
-  <form id="sign-in" class="border m-4 p-2">
+  <form id="sign-in" class="border m-4 p-2 bg-white">
   <fieldset>
     <legend>Sign in!</legend>
     <div class="form-group">
@@ -71,7 +61,7 @@
     <input type="submit" class="btn btn-primary" value="Sign in!">
   </fieldset>
   </form>
-  <form id="sign-up" class="border m-4 p-2">
+  <form id="sign-up" class="border m-4 p-2 bg-white">
     <fieldset>
      <legend>Sign up!</legend>
     <div class="form-group">
@@ -90,8 +80,8 @@
 {{/if}}
 
 {{!-- Modal to create new Lists --}}
-<div class="modal fade" id="list-create-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label"
-  aria-hidden="true">
+<div class="modal fade" id="list-create-modal" tabindex="-1" role="dialog" 
+aria-labelledby="exampleModal3Label" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -105,7 +95,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-warning" id="create-list-button">Save changes</button>
+          <button type="submit" class="btn btn-warning" id="create-list-button" class="edit-list-button">Save changes</button>
         </div>
       </form>
     </div>

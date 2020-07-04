@@ -1,5 +1,5 @@
 <section class="list-card" data-id="{{_id}}">
-  <div class="card text-center">
+  <div class="card bg-transparent text-center">
     <div class="card-body">
       <h5 class="card-title">{{title}}</h5>
       <form class="grocery-create-form" data-id="{{_id}}">
@@ -10,7 +10,7 @@
       <p class="card-text mt-2">{{groceries.length}} items</p>
       <ul class="list-group">
         {{#each groceries as |grocery|}}
-          <li class="list-group-item d-flex w-100">
+          <li class="list-group-item d-flex w-100 grocery-item" data-id="{{grocery._id}}">
             {{#if grocery.marked}}
               <button class="grocery-unmark-button btn btn-sm btn-success" data-id={{grocery._id}}>&checkmark;</button>
               <div class="flex-grow-1">
@@ -29,8 +29,34 @@
     </div>
     <div class="card-footer">
       <a href="#" class="card-link btn btn-warning shadow-sm" data-toggle="modal"
-        data-target="#edit-list-{{_id}}">Edit</a>
+        data-target="#list-edit-modal-{{_id}}">Edit</a>
       <a href="#" data-id="{{_id}}" class="list-delete-button card-link btn btn-warning shadow-sm">Delete</a>
     </div>
   </div>
 </section>
+
+{{!-- Modal for Edit List --}}
+<div class="modal fade" id="list-edit-modal-{{_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form class="list-edit-form" data-id="{{_id}}">
+        <div class="modal-body">
+          <input class="form-control" type="text" id="add-title" name="list[title]" placeholder="Add your title here"
+            required />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-warning" id="create-list-button" class="edit-list-button">Save
+            changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{{!-- End of Edit List --}}

@@ -34,9 +34,9 @@ const showList = function (id) {
   })
 }
 
-const updateList = function (data) {
+const updateList = function (id, data) {
   return $.ajax({
-    url: config.apiUrl + '/list/' + store.list._id,
+    url: config.apiUrl + `/list/${id}`,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

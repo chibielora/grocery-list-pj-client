@@ -42,11 +42,22 @@ const onUnmarkGrocery = function (event) {
     .catch(ui.onUpdateGroceryFailure)
 }
 
+const onDeleteGrocery = (event) => {
+  event.preventDefault()
+  const target = $(event.target)
+  const listId = target.parents('.list-card').data('id')
+  const id = target.data('id')
+  api.deleteGroceryItem(listId, id)
+    .then(() => ui.onDeleteGrocerySuccess(id))
+    .catch(ui.onDeleteGroceryFailure)
+}
+
 const addHandlers = function () {
   const frontPage = $('#front-page')
   frontPage.on('submit', '.grocery-create-form', onCreateGrocery)
   frontPage.on('click', '.grocery-mark-button', onMarkGrocery)
   frontPage.on('click', '.grocery-unmark-button', onUnmarkGrocery)
+  frontPage.on('click', '.grocery-delete-button', onDeleteGrocery)
 }
 
 module.exports = {

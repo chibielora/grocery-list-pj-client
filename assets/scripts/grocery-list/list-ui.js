@@ -7,7 +7,7 @@ const onCreateListSuccess = function (data) {
   $('#list-message').removeClass()
   $('#list-message').addClass('success')
   const listPartialHtml = showListPartial(data.list)
-  $('#create-list-modal').modal('hide')
+  $('#list-create-modal').modal('hide')
   $('#lists-container').append(listPartialHtml)
   console.log('onCreateListSuccess ran. Data is :', data)
 }
@@ -49,6 +49,23 @@ const onShowListFailure = function (error) {
   console.error('onShowListFailure ran. Error is :', error)
 }
 
+const onUpdateListSuccess = function (data) {
+  $('#list-message').text('list successfully updated')
+  $('#list-message').removeClass()
+  $('#list-message').addClass('success')
+  // const listPartialHtml = showListPartial(data.list)
+  // $(`list-card[data-id="${data}"]`).replacewWith(listPartialHtml)
+  // $(`#list-edit-modal-${data}`).modal('hide')
+  console.log('list successfully updated')
+}
+
+const onUpdateListFailure = function (error) {
+  $('#list-message').text('Error on updating list')
+  $('#list-message').removeClass()
+  $('#list-message').addClass('failure')
+  console.error('onUpdateListFailure ran. Error is :', error)
+}
+
 const onDeleteListSuccess = function (id) {
   $('#list-message').text('List successfully deleted')
   $('#list-message').removeClass()
@@ -62,20 +79,6 @@ const onDeleteListFailure = function (error) {
   $('#list-message').removeClass()
   $('#list-message').addClass('failure')
   console.error('onDeleteListFailure ran. Error is :', error)
-}
-
-const onUpdateListSuccess = function () {
-  $('#list-message').text('list successfully updated')
-  $('#list-message').removeClass()
-  $('#list-message').addClass('success')
-  console.log('list successfully updated')
-}
-
-const onUpdateListFailure = function (error) {
-  $('#list-message').text('Error on updating list')
-  $('#list-message').removeClass()
-  $('#list-message').addClass('failure')
-  console.error('onUpdateListFailure ran. Error is :', error)
 }
 
 module.exports = {

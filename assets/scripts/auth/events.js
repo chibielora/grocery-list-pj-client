@@ -46,10 +46,6 @@ const addHandlers = () => {
   frontPage.on('submit', '#sign-in', onSignIn)
   frontPage.on('submit', '#change-password', onChangePassword)
   frontPage.on('click', '#sign-out', onSignOut)
-  // $('#sign-up').on('submit', onSignUp)
-  // $('#sign-in').on('submit', onSignIn)
-  // $('#sign-out').on('click', onSignOut)
-  // $('#change-password').on('submit', onChangePassword)
 }
 
 module.exports = {

@@ -13,13 +13,6 @@ const onCreateList = function (event) {
     .catch(ui.onCreateListFailure)
 }
 
-const onGetList = (event) => {
-  event.preventDefault()
-  api.getList()
-    .then(ui.getListSuccess)
-    .catch(ui.onFailure)
-}
-
 const onIndexList = (event) => {
   event.preventDefault()
   api.indexList()
@@ -29,14 +22,11 @@ const onIndexList = (event) => {
 
 const onUpdateList = (event) => {
   event.preventDefault()
-  api.updateList()
-    .then(ui.onUpdateListSuccess)
-    .cath(ui.onUpdateListFailure)
-}
-
-const onClearList = (event) => {
-  event.preventDefault()
-  ui.clearList()
+  const data = getFormFields(event.target)
+  const id = $(event.target).data('id')
+  api.updateList(id, data)
+    .then(ui.onUpdateListSuccess(id))
+    .catch(ui.onUpdateListFailure)
 }
 
 const onDeleteList = (event) => {
@@ -44,7 +34,7 @@ const onDeleteList = (event) => {
   const id = $(event.target).data('id')
   api.deleteList(id)
     .then(() => ui.onDeleteListSuccess(id))
-    .catch(ui.failure)
+    .catch(ui.onDeleteListFailure)
 }
 
 // Still not defined
@@ -52,10 +42,8 @@ const onDeleteList = (event) => {
 const addHandlers = () => {
   const frontPage = $('#front-page')
   frontPage.on('submit', '#list-create-form', onCreateList)
-  frontPage.on('click', '#getListButton', onGetList)
-  frontPage.on('click', '#indexListButton', onIndexList)
-  frontPage.on('click', '#updateListButton', onUpdateList)
-  frontPage.on('click', '#clearListButton', onClearList)
+  // frontPage.on('click', '#indexListButton', onIndexList)
+  frontPage.on('submit', '.list-edit-form', onUpdateList)
   frontPage.on('click', '.list-delete-button', onDeleteList)
 }
 
