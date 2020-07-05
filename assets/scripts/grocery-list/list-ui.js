@@ -53,6 +53,8 @@ const onUpdateListSuccess = function (id, data) {
   $('#list-message').text('list successfully updated')
   $('#list-message').removeClass()
   $('#list-message').addClass('success')
+  $(`.list-card[data-id="${id}"]`).remove()
+  // $('#lists-container').html(listGrid)
   $(`list-card[data-id="${id}"] .card-title`).text(data.list.title)
   $(`#list-edit-modal-${id}`).modal('hide')
   console.log('list successfully updated')

@@ -26,6 +26,7 @@ const onUpdateList = (event) => {
   const id = $(event.target).data('id')
   api.updateList(id, data)
     .then(() => ui.onUpdateListSuccess(id, data))
+    .then(() => onIndexList(event))
     .catch(ui.onUpdateListFailure)
 }
 

@@ -55,6 +55,7 @@ const signOutSuccess = function () {
   $('#system-message').removeClass()
   $('#system-message').addClass('success')
   $('form').trigger('reset')
+  $('#lists-container').empty()
   showFrontPage(false)
   store.user = null
 }
