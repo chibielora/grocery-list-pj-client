@@ -25,7 +25,7 @@ const onUpdateList = (event) => {
   const data = getFormFields(event.target)
   const id = $(event.target).data('id')
   api.updateList(id, data)
-    .then(ui.onUpdateListSuccess(id))
+    .then(() => ui.onUpdateListSuccess(id, data))
     .catch(ui.onUpdateListFailure)
 }
 

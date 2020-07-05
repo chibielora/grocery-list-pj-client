@@ -49,13 +49,12 @@ const onShowListFailure = function (error) {
   console.error('onShowListFailure ran. Error is :', error)
 }
 
-const onUpdateListSuccess = function (data) {
+const onUpdateListSuccess = function (id, data) {
   $('#list-message').text('list successfully updated')
   $('#list-message').removeClass()
   $('#list-message').addClass('success')
-  // const listPartialHtml = showListPartial(data.list)
-  // $(`list-card[data-id="${data}"]`).replacewWith(listPartialHtml)
-  // $(`#list-edit-modal-${data}`).modal('hide')
+  $(`list-card[data-id="${id}"] .card-title`).text(data.list.title)
+  $(`#list-edit-modal-${id}`).modal('hide')
   console.log('list successfully updated')
 }
 

@@ -28,6 +28,9 @@ const signInSuccess = function (data) {
   $('#system-message').text('Signed in successfully')
   $('#system-message').removeClass()
   $('#system-message').addClass('success')
+  setTimeout(() => {
+    $('#system-message').fadeOut(500)
+  }, 800)
   showFrontPage(true)
   store.user = data.user
   listApi.indexList()
@@ -39,6 +42,12 @@ const signInFailure = function () {
   $('#system-message').text('Error on sign in')
   $('#system-message').removeClass()
   $('#system-message').addClass('failure')
+  // setTimeout(() => {
+  //   $('#system-message').fadeOut(500)
+  // }, 800)
+  $('#system-message').fadeOut(1500, function () {
+    $(window).scrollTop(0)
+  })
 }
 
 const signOutSuccess = function () {

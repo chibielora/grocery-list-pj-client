@@ -3,9 +3,8 @@
 body {
   font-family: arial, sans-serif;
   min-height: 100vh;
-  /* The image used */
-  background-image: url("https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80");
-  /* Center and scale the image nicely */
+  // background-image: url("https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80");
+  background-image: url("https://i.imgur.com/kZastKD.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,16 +15,24 @@ img {
   height: auto;
 }
 
-@media (min-width: 576px) { 
-  .jumbotron {
-    padding: 1rem 1rem;
-  }
-}
-
 .lists-container {
   display: flex;
   flex-wrap: wrap;
   
+}
+p {
+font-family: 'Butterfly Kids',
+cursive;
+color: white;
+font-size: 3rem;
+text-align: center;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
 }
 
 .card {
@@ -43,6 +50,21 @@ img {
     background-color: rgba(0, 0, 0, 0.6)
 }
 
+.transparent-bg {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .9);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  flex-direction: column;
+}
+
 #shoping-list {
   max-width: 800px;
   display: grid;
@@ -53,4 +75,21 @@ img {
 #list-add div {
   background: #f2f2f2;
   padding: 10px;
+}
+
+.messages {
+  display: flex;
+
+}
+
+.success {
+  background-color: var(--green);
+  color: white;
+  font-size: 2em
+}
+
+.failure {
+  background-color: var(--red);
+  color: white;
+  font-size: 2em
 }
