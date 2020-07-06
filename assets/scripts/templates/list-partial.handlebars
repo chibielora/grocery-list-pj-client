@@ -4,10 +4,10 @@
       <h5 class="card-title">{{title}}</h5>
       <form class="grocery-create-form" data-id="{{_id}}">
         <input type="hidden" name="listId" value="{{_id}}" />
-        <input type="text" name="grocery[name]" placeholder="Add item" />
+        <input class="add-grocery" type="text" name="grocery[name]" placeholder="Add item" />
         <button type="submit" class="btn btn-success btn-sm">+</button>
       </form>
-      <p class="card-text mt-2">{{groceries.length}} items</p>
+      {{!-- <p class="card-text mt-2">{{groceries.length}} items</p> --}}
       <ul class="list-group">
         {{#each groceries as |grocery|}}
           <li class="list-group-item d-flex w-100 grocery-item" data-id="{{grocery._id}}">
