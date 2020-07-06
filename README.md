@@ -31,9 +31,11 @@ Express, MongoDB, Node.js, JavaScript, Curl, Heroku, Github
 Ajax, HTML, CSS, Handlebars, JavaScript, Jquery, Bootstrap, Github
 (I was planning on using toastr to handle the notifications maybe in a V2)
 
-### Wireframe
+### Original Wireframe
 
 ![Grocery list Project - First Layout](https://media.git.generalassemb.ly/user/28545/files/4a686f00-b9ec-11ea-8f39-3c2c4dc04416)
+
+### Refactored Wireframe 
 
 ![Grocery list Project - Refactored Layout](https://i.imgur.com/7qQF8a0.jpg)
 
