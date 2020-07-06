@@ -1,5 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
-
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: arial, sans-serif;
   min-height: 100vh;
@@ -85,11 +87,6 @@ font-size: 2em;
   padding: 10px;
 }
 
-.messages {
-  display: flex;
-
-}
-
 .success {
   background-color: var(--green);
   color: white;
@@ -100,6 +97,36 @@ font-size: 2em;
   background-color: var(--red);
   color: white;
   font-size: 2em
+}
+
+#system-message {
+  font-family: 'Butterfly Kids',
+  cursive;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+#list-message {
+  font-family: 'Butterfly Kids',
+    cursive;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 @media only screen and (min-width: 1200px) {

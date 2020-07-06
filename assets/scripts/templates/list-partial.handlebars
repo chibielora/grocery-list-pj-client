@@ -12,12 +12,12 @@
         {{#each groceries as |grocery|}}
           <li class="list-group-item d-flex w-100 grocery-item" data-id="{{grocery._id}}">
             {{#if grocery.marked}}
-              <button class="grocery-unmark-button btn btn-sm btn-success" data-id={{grocery._id}}>&checkmark;</button>
+              <button id="unmark-button" class="grocery-unmark-button btn btn-sm btn-success" data-id={{grocery._id}}>&checkmark;</button>
               <div class="flex-grow-1">
                 <del>{{grocery.name}}</del>
               </div>
             {{else}}
-              <button class="grocery-mark-button btn btn-sm btn-light" data-id={{grocery._id}}>&checkmark;</button>
+              <button id="mark-button" class="grocery-mark-button btn btn-sm btn-light" data-id={{grocery._id}}>&checkmark;</button>
               <div class="flex-grow-1">
                 {{grocery.name}}
               </div>
@@ -47,13 +47,14 @@
       </div>
       <form class="list-edit-form" data-id="{{_id}}">
         <div class="modal-body">
-          <input class="form-control" type="text" id="add-title" name="list[title]" placeholder="Add your title here"
+          <input class="form-control" type="text" id="add-title" name="list[title]" placeholder="Edit your title here"
             required />
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-warning" id="create-list-button" class="edit-list-button">Save
-            changes</button>
+          <button type="submit" class="btn btn-warning" id="create-list-button" class="edit-list-button">
+            Save changes
+          </button>
         </div>
       </form>
     </div>

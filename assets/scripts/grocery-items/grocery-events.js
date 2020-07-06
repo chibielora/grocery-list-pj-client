@@ -3,6 +3,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const api = require('./grocery-api.js')
 const ui = require('./grocery-ui.js')
+const { showListMessage } = require('../messages')
 
 const onCreateGrocery = function (event) {
   event.preventDefault()
@@ -24,6 +25,9 @@ const onMarkGrocery = function (event) {
   }
   api.updateGroceryItem(listId, id, data)
     .then(ui.onUpdateGrocerySuccess)
+    .then(() => {
+      showListMessage('Got it!')
+    })
     .catch(ui.onUpdateGroceryFailure)
 }
 
@@ -39,6 +43,9 @@ const onUnmarkGrocery = function (event) {
   }
   api.updateGroceryItem(listId, id, data)
     .then(ui.onUpdateGrocerySuccess)
+    .then(() => {
+      showListMessage('I forgot it!')
+    })
     .catch(ui.onUpdateGroceryFailure)
 }
 
