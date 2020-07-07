@@ -3,19 +3,18 @@
   box-sizing: border-box;
 }
 body {
-  font-family: arial, sans-serif;
-  min-height: 100vh;
-  // background-image: url("https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80");
   background-image: url("https://i.imgur.com/kZastKD.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: arial, sans-serif;
   margin-top: 3rem;
+  min-height: 100vh;
 }
 
 img {
-  width: 40%;
   height: auto;
+  width: 40%;
 }
 
 .lists-container {
@@ -23,12 +22,12 @@ img {
   flex-wrap: wrap;
   margin-top: 1rem;
   margin-left: 0.5rem;
-  
 }
+
 p {
+color: white;
 font-family: 'Butterfly Kids',
 cursive;
-color: white;
 font-size: 3rem;
 text-align: center;
 }
@@ -36,8 +35,8 @@ text-align: center;
 .style-fonts {
 font-family: 'Butterfly Kids',
 cursive;
-font-weight: bold;
 font-size: 2em;
+font-weight: bold;
 }
 
 .add-grocery {
@@ -46,47 +45,32 @@ margin-bottom: 1rem;
 
 .logo {
   display: block;
+  margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1rem;
   margin-top: 1rem;
 }
 
 .card {
-  width: 18rem;
-  min-width: 18rem;
+  background-color: rgba(245, 245, 245, 0.4);
   margin: 1em;
-  background-color: rgba(245, 245, 245, 0.4)
+  min-width: 18rem;
+  width: 18rem;
 }
 
 .card-body  {
-  background-color: rgba(245, 245, 245, 0.6)
+  background-color: rgba(245, 245, 245, 0.6);
 }
 
 .card-footer {
-    background-color: rgba(0, 0, 0, 0.6)
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
-// .transparent-bg {
-//   display: flex;
-//   position: fixed;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   background-color: rgba(0, 0, 0, .9);
-//   justify-content: center;
-//   align-items: center;
-//   color: white;
-//   font-size: 5rem;
-//   flex-direction: column;
-// }
-
 #shoping-list {
-  max-width: 800px;
   display: grid;
-  grid-template-columns: 70% 30%;
   grid-gap: 10px;
+  grid-template-columns: 70% 30%;
+  max-width: 800px;
 }
 
 #list-add div {
@@ -107,39 +91,34 @@ margin-bottom: 1rem;
 }
 
 #system-message {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
   font-family: 'Butterfly Kids',
   cursive;
-  position: fixed;
-  display: flex;
-  bottom: 0;
-  z-index: 2;
-  left: 0;
-  right: 0;
   justify-content: center;
-  flex-direction: column;
+  left: 0;
+  position: fixed;
+  right: 0;
   text-align: center;
-  align-items: center;
+  z-index: 2;
 }
 
 #list-message {
-  font-family: 'Butterfly Kids',
-    cursive;
-  position: fixed;
-  display: flex;
-  bottom: 0;
-  z-index: 2;
-  left: 0;
-  right: 0;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
   align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Butterfly Kids',
+  cursive;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  z-index: 2;
 }
-
-// .front-page {
-//   justify-content: center;
-//   display: grid;
-// }
 
 .bg-white {
   display: table;
@@ -147,8 +126,8 @@ margin-bottom: 1rem;
 }
 
 .auth-container {
-  display: flex;
   align-items: center;
+  display: flex;
   flex-direction: column;
 }
 

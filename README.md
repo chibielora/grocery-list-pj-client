@@ -4,9 +4,9 @@
 
 This app's purpose is to keep track of your grocery items. You are able to create, update and delete lists set in your main page, and add and delete items. Also, you can mark and unmark them to your convenience.
 
-### Live Website
+### Live APPS
 
-[Live Website](https://chibielora.github.io/grocery-list-pj-client/)
+[Live Website](https://chibielora.github.io/grocery-list-pj-client/) | [Heroku App](https://pure-plateau-44175.herokuapp.com/)
 
 ### Client Repository
 
@@ -35,7 +35,7 @@ Ajax, HTML, CSS, Handlebars, JavaScript, Jquery, Bootstrap, Github
 
 ![Grocery list Project - First Layout](https://media.git.generalassemb.ly/user/28545/files/4a686f00-b9ec-11ea-8f39-3c2c4dc04416)
 
-### Refactored Wireframe 
+### Refactored Wireframe
 
 ![Grocery list Project - Refactored Layout](https://i.imgur.com/7qQF8a0.jpg)
 
